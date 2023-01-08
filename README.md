@@ -2,9 +2,9 @@
 
 This is just a simple CRUD API of Todos made with Express.
 
-Rest Api: node js express framework
-Docs: swagger
-DB: postgresql
+- Rest Api: node js express framework
+- Docs: swagger
+- DB: postgresql
 
 To start it, add env file, install Node and run:
 
