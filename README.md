@@ -1,9 +1,15 @@
 # simple-express-crud-api
-This is just a simple CRUD API of Books made with Express. The aim is to provide an API as starting point to other implementations or tests.
 
-To start it, install Node and run:
+This is just a simple CRUD API of Todos made with Express.
+
+Rest Api: node js express framework
+Docs: swagger
+DB: postgresql
+
+To start it, add env file, install Node and run:
 
 ```
-npm install
-npm start
+1.add your env file
+2.npm install
+3.npm start
 ```
