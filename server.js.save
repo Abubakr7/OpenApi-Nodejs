@@ -24,7 +24,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://2.56.213.92:${PORT}/`,
+        url: `http://:${PORT}/`,
       },
     ],
   },
