@@ -2,11 +2,8 @@ var express = require("express"),
   bodyParser = require("body-parser");
 const swaggerJsdoc = require("swagger-jsdoc"),
   swaggerUi = require("swagger-ui-express");
-var cors = require("cors");
-const app = express();
-const authToken = require("./middleware/authToken");
 
-app.use(cors());
+const app = express();
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 app.use(
@@ -16,13 +13,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-const { router: auth, router1: logout } = require("./routes/auth");
-
 app.use("/todos", require("./routes/todos"));
-app.use("/api", auth);
-app.use("/api", authToken, logout);
-app.use("/api/users", authToken, require("./routes/users"));
-
 console.log(PORT);
 const options = {
   definition: {
@@ -33,21 +24,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://2.56.213.92:${PORT}/`,
-      },
-    ],
-    components: {
-      securitySchemes: {
-        BearerAuth: {
-          type: "http",
-          scheme: "bearer",
-          bearerFormat: "JWT",
-        },
-      },
-    },
-    security: [
-      {
-        BearerAuth: [],
+        url: `http://:${PORT}/`,
       },
     ],
   },
