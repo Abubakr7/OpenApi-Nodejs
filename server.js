@@ -23,7 +23,6 @@ app.use("/api", auth);
 app.use("/api", authToken, logout);
 app.use("/api/users", authToken, require("./routes/users"));
 
-console.log(PORT);
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -33,7 +32,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://2.56.213.92:${PORT}/`,
+        url: `${process.env.URL}${PORT}/`,
       },
     ],
     components: {
