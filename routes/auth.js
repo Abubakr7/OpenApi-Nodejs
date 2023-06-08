@@ -237,7 +237,7 @@ router.post(
         },
         process.env.ACCESS,
         {
-          expiresIn: "1m",
+          expiresIn: "10m",
         }
       );
       const refreshToken = jwt.sign(
@@ -249,7 +249,7 @@ router.post(
         },
         process.env.REFRESH,
         {
-          expiresIn: "2m",
+          expiresIn: "60m",
         }
       );
 
@@ -300,7 +300,7 @@ router.post("/login", async (req, res) => {
       },
       process.env.ACCESS,
       {
-        expiresIn: "1m",
+        expiresIn: "10m",
       }
     );
     const refreshToken = jwt.sign(
@@ -312,7 +312,7 @@ router.post("/login", async (req, res) => {
       },
       process.env.REFRESH,
       {
-        expiresIn: "2m",
+        expiresIn: "60m",
       }
     );
 
